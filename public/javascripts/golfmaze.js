@@ -284,6 +284,11 @@ $(function() {
                 var $input = $('<input>').prop({ type: 'text' });
                 $input.keyup(cellValueEntered);
                 $cell.append($input);
+                $cell.click(function(e) {
+                    var $c = $(e.target);
+                    if (!$c.hasClass('cell')) { $c = $c.parents('.cell'); }
+                    $c.find('input').focus();
+                });
                 if (r === puzzle.tee[0] && c === puzzle.tee[1]) {
                     $cell.addClass('tee locked from-path-end from-path');
                 } else if (r === puzzle.hole[0] && c === puzzle.hole[1]) {

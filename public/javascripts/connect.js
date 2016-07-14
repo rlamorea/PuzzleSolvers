@@ -269,6 +269,7 @@ $(function() {
                 }
             }
         }
+        puzzle.selectedCell = null;
         $('.cell.node')
             .removeClass('complete overflow sel tgt')
             .addClass('incomplete')

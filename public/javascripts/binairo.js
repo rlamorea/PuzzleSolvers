@@ -425,7 +425,7 @@ $(function() {
     // set up starting state of grid
     var puzzle = init();
     testVals = null; // reset test vals
-    puzzle.mode = $('#mode').val();
+    puzzle.mode = 'check';
     setState(puzzle);
     showGrid(puzzle);
     $('#save').click(function() {
@@ -479,22 +479,6 @@ $(function() {
     });
 
     // running handlers
-    $('#mode').change(function() {
-        var oldMode = puzzle.runMode;
-        var newMode = $('#mode').val();
-        if (oldMode != newMode) {
-            if (newMode == 'check' || newMode == 'process') {
-                puzzle = check(puzzle);
-            }
-            if (newMode == 'process' && puzzle.good) {
-                isDone(puzzle);
-                puzzle = process(puzzle);
-            }
-        }
-        puzzle.runMode = newMode;
-        setState(puzzle);
-    });
-
     function isDone() {
         if (puzzle.good && puzzle.openCells == 0) {
             setState(puzzle, 'done');
