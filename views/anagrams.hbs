@@ -1,0 +1,33 @@
+{{#contentFor "styles"}}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="/stylesheets/anagrams.css"/>
+{{/contentFor}}
+{{#contentFor "scripts"}}
+  <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.0.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.0.0/lodash.js"></script>
+  <script type="text/javascript" src="/javascripts/anagram.js"></script>
+  <script type="text/javascript" src="/javascripts/anagrams.js"></script>
+{{/contentFor}}
+
+<h1>{{title}}</h1>
+<p id="actions">
+    <span id="opts">
+        word: <input id="word" type="text" pattern="[a-zA-Z ]"/>
+        definition: <input id="def" type="text" pattern="[a-zA-Z ]"/>
+        pattern: <input id="pattern" type="text" pattern="[a-zA-Z_ ]"/>
+        <button id="create">Create</button>
+    </span>
+
+    <button id="solve">Solve</button>
+
+    <button id="restart">Restart</button>
+    <button id="new">New</button>
+
+    <a href="/">back</a>
+</p>
+<div id="puzzle">
+    <div id="baseword"></div>
+    <div id="definition"></div>
+    <div id="solveword"></div>
+    <ul id="solutions"></ul>
+</div>

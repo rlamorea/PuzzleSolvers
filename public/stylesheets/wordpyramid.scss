@@ -1,0 +1,60 @@
+#stack {
+    text-align: center;
+    width: 100%;
+
+    div {
+        button {
+            display: inline-block;
+            vertical-align: top;
+            margin: 1.8em 0 0 0.5em;
+            visibility: hidden;
+        }
+        i.fa {
+            margin-left: 0.5em;
+            color: gray;
+        }
+        i.fa.active:hover {
+            color: black;
+        }
+        i.fa.nofind {
+            visibility: hidden;
+        }
+    }
+    div:last-of-type {
+        button { visibility: visible; }
+        button.nodel { visibility: hidden; }
+    }
+
+    font-size: 2em;
+    line-height: 2em;
+    .levelNo, .tile {
+        vertical-align: top;
+        border: solid 1px darkgray;
+        padding: 0.1em;
+        width: 1.1em;
+        font-size: 1.5em;
+        text-align: center;
+        display: inline-block;
+    }
+    .tile.ref { background-color: lightgray; }
+    .tile.error { background-color: red; }
+    .levelNo { border-color: transparent; }
+
+    #addlevel { display: block; text-align: center; }
+}
+
+#choices {
+    margin: 0.5em 0;
+    padding: 0;
+    list-style-type: none;
+
+    li {
+        display: inline-block;
+        padding: 0.1em 0.75em;
+        color: darkgray;
+    }
+    li:hover {
+        background-color: #eeeeee;
+        color: black;
+    }
+}

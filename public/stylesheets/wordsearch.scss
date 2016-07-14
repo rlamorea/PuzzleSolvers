@@ -1,0 +1,82 @@
+.puzzle {
+    text-align: center;
+}
+#grid {
+    border: solid 2px black;
+    padding: 0.2em;
+    display: inline-block;
+    font-size: 2em;
+    vertical-align: top;
+
+    .row {
+        display: block;
+        .cell {
+            display: inline-block;
+            text-align: center;
+            width: 1.1em;
+            height: 1.1em;
+            line-height: 1.1em;
+            padding: 0.1em;
+        }
+        .cell:hover, .cell.highlight {
+            background-color: #eeeeee;
+        }
+        .cell.selected {
+            color: white;
+            background-color: black;
+        }
+        .cell.testword {
+            color: white;
+            background-color: darkgray;
+        }
+        .cell.testword.identified {
+            background-color: darkgreen;
+        }
+        .cell.used {
+            text-decoration: line-through;
+        }
+
+        input {
+            font-size: 1em;
+            border: none;
+            text-align: center;
+            width: 1.1em;
+            height: 1.1em;
+            line-height: 1.1em;
+            padding: 0.1em;
+        }
+        input:focus {
+            background-color: #eeeeee;
+        }
+    }
+}
+#words {
+    display: inline-block;
+    width: 25%;
+    text-align: left;
+    margin: 0 0 0 5%;
+    font-size: 1.2em;
+    list-style-type: none;
+    padding: 0;
+    vertical-align: top;
+
+    li:hover, li.highlight { background-color: #eeeeee; }
+    li.identified {
+        color: white;
+        background: darkgreen;
+    }
+    li.found {
+        text-decoration: line-through;
+    }
+
+    li input {
+        font-size: 1em;
+        width: 100%;
+    }
+}
+#keyword {
+    font-size: 2em;
+    padding: 0.2em;
+    color: darkgreen;
+    font-weight: bold;
+}

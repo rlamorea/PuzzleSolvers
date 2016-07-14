@@ -1,0 +1,25 @@
+{{#contentFor "styles"}}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="/stylesheets/connect.css"/>
+{{/contentFor}}
+{{#contentFor "scripts"}}
+  <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.0.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.0.0/lodash.js"></script>
+  <script type="text/javascript" src="/javascripts/connect.js"></script>
+{{/contentFor}}
+
+<h1>{{title}}</h1>
+<p id="actions">
+  <button id="save">Start</button>
+  <button id="cancel">Clear</button>
+
+  <button id="restart">Restart</button>
+  <button id="new">New</button>
+
+  <span id="state" class="new">Define Grid</span>
+  <a href="/">back</a>
+</p>
+<div class="puzzle">
+    <div id="grid">
+    </div>
+</div>

@@ -1,0 +1,21 @@
+table tr td:nth-child(5), table tr th:nth-child(5) {
+    border-right: solid 2px black;
+}
+table tr:nth-child(5) td, table tr:nth-child(5) th {
+    border-bottom: solid 2px black;
+}
+
+table td.cell {
+    .pos-val {
+        display: block;
+        font-size: 11px;
+        height: 12px;
+        color: gray;
+        text-align: left;
+        cursor: pointer;
+        margin: 0 25%;
+    }
+    .pos-val:last-child {
+        text-align: right;
+    }
+}

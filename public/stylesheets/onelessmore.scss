@@ -1,0 +1,97 @@
+#letter { width: 1em; }
+#actions.create {
+    #save, #cancel, #solve, #restart, #new {
+        display: none;
+    }
+}
+#actions.run #opts { display: none; }
+
+#actions.solved {
+    #opts, #save, #cancel, #solve {
+        display: none;
+    }
+}
+
+#puzzle {
+    text-align: center;
+
+    .letterTile {
+        margin: 0.1em;
+        border: solid 1px black;
+        padding: 0.1em;
+        min-width: 1em;
+        font-size: 2.5em;
+        font-weight: bold;
+        display: inline-block;
+        cursor: pointer;
+    }
+    .letterTile:hover { background-color: #ffcccc; }
+    .letterTile.unavailable {
+        opacity: 0.6;
+        cursor: default;
+    }
+    .letterTile.unavailable:hover { background-color: white; }
+    .letterTile.selected {
+        background-color: #ffaaaa;
+        color: darkgray;
+    }
+    .letterTile.inv {
+        color: white;
+        background-color: black;
+    }
+    .letterTile.inv:hover {
+        background-color: #660000;
+    }
+    .letterTile.inv.unavailable:hover { background-color: black; }
+    .letterTile.inv.selected {
+        background-color: #880000;
+        color: lightgray;
+    }
+
+    #baseword {
+        margin: 0.5em 0;
+    }
+    #extraletter {
+        .letterTile {
+            border-radius: 1em;
+            min-width: 1.2em;
+
+            i {
+                font-size: 0.5em;
+                line-height: 2.1em;
+                display: inline-block;
+                margin-top: 0.1em;
+                font-style: normal;
+                vertical-align: top;
+            }
+        }
+    }
+    #solveword {
+        .letterTile {
+            position: relative;
+
+            .del {
+                position: absolute;
+                top: -1px;
+                right: 2px;
+                font-size: 0.32em;
+                color: red;
+                display: none;
+            }
+            .del:hover {
+                color: white;
+                background: red;
+            }
+        }
+        .letterTile.assigned {
+            .del { display: block; }
+        }
+    }
+}
+#puzzle.create { display: none; }
+#puzzle.solved {
+    .letterTile:hover {
+        background-color: white;
+        cursor: default;
+    }
+}

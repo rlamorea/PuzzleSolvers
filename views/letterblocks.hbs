@@ -1,0 +1,29 @@
+{{#contentFor "styles"}}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="/stylesheets/letterblocks.css"/>
+{{/contentFor}}
+{{#contentFor "scripts"}}
+  <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.0.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.0.0/lodash.js"></script>
+  <script type="text/javascript" src="/javascripts/anagram.js"></script>
+  <script type="text/javascript" src="/javascripts/letterblocks.js"></script>
+{{/contentFor}}
+
+<h1>{{title}}</h1>
+<p id="actions">
+    <span id="opts">
+        top letters: <input id="topletters" type="text" pattern="[a-zA-Z]"/>
+        bottom letters: <input id="bottomletters" type="text" pattern="[a-zA-Z]"/>
+        flippable: <input id="flippable" type="number" min="0" max="10"/>
+        <button id="create">Create</button>
+    </span>
+
+    <button id="solve">Solve</button>
+
+    <button id="restart">Restart</button>
+    <button id="new">New</button>
+
+    <a href="/">back</a>
+</p>
+<div id="tiles">
+</div>

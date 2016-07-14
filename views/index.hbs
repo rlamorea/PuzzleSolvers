@@ -1,0 +1,7 @@
+<h1>{{title}}</h1>
+<ul class="bigsel">
+    <li>Choose One</li>
+    {{#each solvers}}
+        <li><a href="/{{@key}}">{{this}}</a></li>
+    {{/each}}
+</ul>

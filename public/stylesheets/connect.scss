@@ -1,0 +1,106 @@
+.puzzle { text-align: center; }
+
+#grid {
+    display: inline-block;
+    border: solid 2px black;
+    padding: 0.2em;
+}
+
+.row { margin: 0; height: 3em; }
+
+.cell {
+    display: inline-block;
+    font-size: 1em;
+    width: 3em;
+    height: 3em;
+    position: relative;
+
+    .lt, .rt, .up, .dn {
+        position: absolute;
+        border: solid 3px black;
+        background-color: white;
+        z-index: 0;
+    }
+    .lt, .rt {
+        border-left: none; border-right: none;
+        top: 50%;
+        margin-top: -6px;
+        width: 1.5em;
+        height: 6px;
+    }
+    .up, .dn {
+        border-top: none; border-bottom: none;
+        left: 50%;
+        margin-left: -6px;
+        width: 6px;
+        height: 1.5em;
+    }
+    .lt { left: 0; }
+    .rt { right: 0; }
+    .up { top:0; }
+    .dn { bottom: 0 };
+
+    .nd {
+        position: absolute;
+        z-index: 1;
+        font-size: 1em;
+        width: 2em;
+        height: 2em;
+        line-height: 2em;
+        border: solid 3px black;
+        border-radius: 1.25em;
+        text-align: center;
+        background-color: white;
+        left: 50%; margin-left: -1.2em;
+        top: 50%; margin-top: -1.2em;
+        cursor: pointer;
+    }
+}
+.cell.node:hover .nd {
+    background-color: #eeeeee;
+}
+
+.cell.blank {
+    .lt, .rt, .up, .dn, .nd { display: none; }
+}
+.cell.horiz-1, .cell.horiz-2 {
+    .lt, .rt { display: block; }
+}
+.cell.horiz-1 {
+    .lt, .rt { border-bottom: none; }
+}
+.cell.vert-1, .cell.vert-2 {
+    .up, .dn { display: block; }
+}
+.cell.vert-1 {
+    .up, .dn { border-right: none; }
+}
+.cell.incomplete .nd {
+    color: gray;
+    border-color: gray;
+}
+.cell.overflow .nd {
+    color: red;
+    border-color: red;
+}
+.cell.sel .nd, .cell.node.sel:hover .nd {
+    background-color: lightpink;
+}
+.cell.tgt .nd { background-color: lightgreen; }
+.cell.node.tgt:hover .nd { background-color: limegreen; }
+
+
+.row:first-child .cell .up,
+.row:last-child .cell .dn,
+.row .cell:first-child .lt,
+.row .cell:last-child .rt {
+    display: none;
+}
+
+#grid.done .cell.node:hover .nd {
+    background-color: white;
+}
+
+#grid.new .cell:hover {
+    background-color: #eeeeee;
+}

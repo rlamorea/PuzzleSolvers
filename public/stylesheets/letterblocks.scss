@@ -1,0 +1,65 @@
+#actions.create {
+    #save, #cancel, #solve, #restart, #new, #recreate {
+        display: none;
+    }
+}
+#actions.new #opts { display: none; }
+#actions.run {
+    #opts, #recreate {
+        display: none;
+    }
+}
+#actions.solved {
+    #opts, #save, #cancel, #solve {
+        display: none;
+    }
+}
+
+#tiles {
+    text-align: center;
+
+    .tile {
+        display: inline-block;
+        padding: 0 3px 3px;
+        margin-right: 6px;
+        width: 40px;
+        font-size: 38px;
+        font-height: 42px;
+        font-weight: bold;
+        position: relative;
+        box-shadow: -1px 1px 0px #888, -2px 2px 0px #888, -3px 3px 0px #888, -4px 4px 0px #888, -5px 5px 0px #222;
+        border: solid 1px #222222;
+        cursor: pointer;
+
+        hr { margin: 0; }
+
+        .flip {
+            display: none;
+            position: absolute;
+            top: 3px; right: 3px;
+            z-index: 10;
+            width: 18px;
+            height: 18px;
+            color: red;
+            font-size: 14px;
+            font-height: 15px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.8);
+        }
+    }
+    .tile:hover {
+        background: #eeeeee;
+    }
+    .tile.flippable:hover .flip {
+        display: block;
+    }
+    .tile.selected {
+        background-color: #eeeeee;
+        border-color: red;
+    }
+}
+#tiles.solved {
+    .tile:hover { background: white; }
+    .tile .flip, .tile.flippable:hover .flip { display: none; }
+}
+

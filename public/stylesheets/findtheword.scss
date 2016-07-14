@@ -1,0 +1,75 @@
+.puzzle { text-align: center; }
+
+#grid {
+    display: inline-block;
+    font-size: 2em;
+}
+
+.cell {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    line-height: 1.5em;
+    text-align: center;
+    margin: 0.2em;
+    border: solid 1px black;
+    vertical-align: top;
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+}
+.cell.arrow, .cell.locked, .cell.fixed.perm { cursor: default; }
+.cell.arrow:after {
+    display: inline-block;
+    content: '\f062';
+    font-family: FontAwesome;
+}
+.cell.arrow.a-45:after { transform: rotate(45deg); }
+.cell.arrow.a-90:after { transform: rotate(90deg); }
+.cell.arrow.a-135:after { transform: rotate(135deg); }
+.cell.arrow.a-180:after { transform: rotate(180deg); }
+.cell.arrow.a-225:after { transform: rotate(225deg); }
+.cell.arrow.a-270:after { transform: rotate(270deg); }
+.cell.arrow.a-315:after { transform: rotate(315deg); }
+
+.cell.highlight { background-color: lightgreen; }
+
+.cell.fixed:after {
+    content: '';
+    position: absolute;
+    top: 0.1em; left: 0.1em;
+    width: 1.3em; height: 1.3em;
+    border: solid 1px black;
+    border-radius: 1em;
+    z-index: 1;
+}
+.cell.locked {
+    background-color: lightgray;
+}
+
+#word {
+    margin-top: 0.5em;
+    font-size: 2em;
+}
+
+#grid.new {
+    .cell input {
+        border: none;
+        font-size: 1em;
+        width: 1em;
+        height: 1em;
+        line-height: 1em;
+        text-align: center;
+        z-index: 2;
+        background: transparent;
+    }
+    .cell:hover {
+        background-color: #eeeeee;
+    }
+    .cell.fixed:after, .cell.arrow:after { z-index: -1; }
+    .cell.arrow:after {
+        position: absolute;
+        top: 0;
+        left: 0.25em;
+    }
+}

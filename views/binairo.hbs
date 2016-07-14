@@ -1,0 +1,35 @@
+{{#contentFor "styles"}}
+  <link rel="stylesheet" href="/stylesheets/binairo.css"/>
+{{/contentFor}}
+{{#contentFor "scripts"}}
+  <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.0.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.0.0/lodash.js"></script>
+  <script type="text/javascript" src="/javascripts/binairo.js"></script>
+{{/contentFor}}
+
+<h1>{{title}}</h1>
+<p id="actions">
+    <button id="save">Start</button>
+    <button id="cancel">Clear</button>
+
+        <span id="modesel">
+            Mode: <select id="mode">
+                <option value="check">Check</option>
+                <option value="manual">Manual</option>
+                <option value="process">Auto</option>
+            </select>
+        </span>
+
+    <button id="check">Check</button>
+    <button id="process">Process</button>
+    <button id="solve">Solve</button>
+
+    <button id="restart">Restart</button>
+    <button id="new">New</button>
+
+    <span id="state" class="new">Define Grid</span>
+    <a href="/">back</a>
+</p>
+<table id="grid">
+
+</table>
